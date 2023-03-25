@@ -1,0 +1,104 @@
+.wp-block-mos-auth-button {
+  display: flex;
+}
+
+.mos-block-auth-button {
+  display: block;
+  font-family: var(--wp--preset--font-family--sans);
+  font-size: var(--wp--preset--font-size--body-medium);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border-radius: 6px;
+  border-style: none;
+  padding: 0.25rem 0.75rem;
+  text-align: center;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--on-surface);
+  transition-property: color, background-color, border-color, fill, stroke,
+    opacity, box-shadow, transform, filter, -webkit-text-decoration-color,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.has-dropdown {
+  align-items: stretch;
+  padding: 0;
+  align-items: flex-end;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: #4a4a4a;
+  line-height: 1.5;
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 100%;
+  padding-top: 0.75rem;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  min-width: 10rem;
+  border-radius: 6px;
+  background-color: var(--wp--preset--color--surface);
+  box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0, rgba(0, 0, 0, 0.06) 0 3px 6px,
+    rgba(0, 0, 0, 0.06) 0 12px 21px;
+}
+
+.dropdown a {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--wp--preset--color--on-surface);
+  opacity: 0.6;
+  transition-property: color, background-color, border-color, fill, stroke,
+    opacity, box-shadow, transform, filter, -webkit-text-decoration-color,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dropdown a:hover {
+  opacity: 1;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.has-dropdown:hover a.mos-block-auth-button {
+  background-color: var(--wp--preset--color--on-surface);
+  color: var(--wp--preset--color--surface);
+}

@@ -52,7 +52,7 @@
 
                     // Log user in
                     wp_set_auth_cookie( $user_id, true );
-                    wp_redirect( home_url() );
+                    wp_redirect( site_url( '/contul-meu' ) );
                     exit;
                 }
             }

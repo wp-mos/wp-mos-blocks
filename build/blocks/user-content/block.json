@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "mos/user-content",
+  "title": "User Content",
+  "category": "mos-category",
+  "description": "User content block",
+  "textdomain": "mos-blocks",
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css",
+  "script": "file:./script.js"
+}

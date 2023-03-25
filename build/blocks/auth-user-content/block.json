@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "mos-blocks/auth-user-content",
+  "title": "Auth User Content",
+  "category": "mos-category",
+  "description": "Auth User Content",
+  "textdomain": "mos-blocks",
+  "editorScript": "file:./auth-user-content.js",
+  "editorStyle": "file:./auth-user-content.css",
+  "style": "file:./auth-user-content.css",
+  "script": "file:./frontend.js"
+}

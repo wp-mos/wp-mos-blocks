@@ -28,9 +28,9 @@
                     </a>
                     <div class="dropdown">
                         <div class="dropdown-wrapper">
-                            <a href='<?php echo esc_url( site_url( '/utilizatori/contul-meu' ) ) ?>'
+                            <a href='<?php echo esc_url( site_url( '/contul-meu' ) ) ?>'
                                class="dropdown-item"><?php _e( 'My Account', 'mos' ) ?></a>
-                            <a href='<?php echo esc_url( site_url( '/utilizatori/comanda-noua' ) ) ?>'
+                            <a href='<?php echo esc_url( site_url( '/comanda-noua' ) ) ?>'
                                class="dropdown-item"><?php _e( 'New Order', 'mos' ) ?></a>
                             <a href='<?php echo wp_logout_url( home_url() ) ?>'
                                class="dropdown-item"><?php _e( 'Logout', 'mos' ) ?></a>

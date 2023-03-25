@@ -5,7 +5,7 @@
   "title": "User Content",
   "category": "mos-category",
   "description": "User content block",
-  "textdomain": "mos-blocks",
+  "textdomain": "mos",
   "editorScript": "file:./index.js",
   "style": "file:./index.css",
   "script": "file:./script.js"

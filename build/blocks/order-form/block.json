@@ -1,12 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
   "apiVersion": 2,
-  "name": "mos/user-content",
-  "title": "User Content",
+  "name": "mos/order-form",
+  "title": "Order Form",
   "category": "mos-category",
-  "description": "User content block",
+  "description": "Adds online order form",
   "textdomain": "mos",
   "editorScript": "file:./index.js",
   "style": "file:./index.css",
-  "script": "file:./script.js"
+  "script": "file:./api.js"
 }

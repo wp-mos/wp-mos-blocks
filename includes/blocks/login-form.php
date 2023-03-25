@@ -13,7 +13,7 @@
             $password = sanitize_text_field( $_POST['login-form-password'] );
 
             if ( empty( $email ) || empty( $password ) ) {
-                $output .= '<div class="login-error">' . esc_html__( 'Invalid login credentials.', 'mos' ) . '</div>';
+                $output .= '<div class="login-error">' . esc_html__( 'Invalid user and password.', 'mos' ) . '</div>';
             }
 
             if ( empty( $output ) ) {
@@ -23,7 +23,7 @@
 
                 $user = wp_signon( $login_data, false );
                 if ( is_wp_error( $user ) ) {
-                    $output .= '<div class="login-error">' . esc_html__( 'Invalid login credentials.', 'mos' ) . '</div>';
+                    $output .= '<div class="login-error">' . esc_html__( 'Invalid user and password.', 'mos' ) . '</div>';
                 } else {
                     // Generate and store a token for the user
                     $token = wp_generate_password( 32 );
@@ -32,7 +32,7 @@
                     // Set the token as a cookie
                     setcookie( 'auth_token', $token, time() + ( 86400 * 30 ), "/" ); // Cookie will expire in 30 days
                     wp_set_auth_cookie( $user->ID );
-                    wp_safe_redirect( home_url() . '/utilizatori/comanda-noua/' );
+                    wp_safe_redirect( home_url() . '/comanda-noua/' );
                     exit;
                 }
             }

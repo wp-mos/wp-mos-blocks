@@ -3,7 +3,8 @@
   function mos_register_blocks(): void
   {
     $blocks = [
-      ['name' => 'auth-button', 'options' => ['render_callback' => 'mos_auth_button']]
+      ['name' => 'auth-button', 'options' => ['render_callback' => 'mos_auth_button']],
+      ['name' => 'login-form', 'options' => ['render_callback' => 'mos_login_form']],
     ];
 
     foreach ($blocks as $block) {

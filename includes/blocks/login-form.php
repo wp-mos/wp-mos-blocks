@@ -64,7 +64,7 @@
                     <div class="form-footer-meta">
                         <?php esc_html_e( 'Don\'t have an account yet?', 'mos' ); ?>
                         <a class="animated-link"
-                           href="<?php echo esc_url( site_url( '/utilizatori/inregistrare' ) ); ?>"><?php esc_html_e( 'Register', 'mos' ); ?></a>
+                           href="<?php echo esc_url( site_url( '/inregistrare' ) ); ?>"><?php esc_html_e( 'Register', 'mos' ); ?></a>
                     </div>
                     <button class="form-subscribe-button"
                             type="submit"><?php esc_html_e( 'Log in to your account', 'mos' ); ?></button>

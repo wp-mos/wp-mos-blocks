@@ -7,7 +7,7 @@
         ] );
 
         wp_add_inline_script(
-            'mos-blocks-order-form-script',
+            'mos-order-form-script',
             "const settings = {$authURLs};",
             'before'
         );

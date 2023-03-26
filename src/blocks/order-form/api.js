@@ -356,9 +356,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (response.ok) {
         const data = await response.json();
-        const cartUrl = data["cart_url"];
+        const checkoutUrl = data["checkout_url"];
         orderForm.reset();
-        location.replace(cartUrl);
+        location.replace(checkoutUrl);
       } else {
         console.log("Error:", response.status);
       }

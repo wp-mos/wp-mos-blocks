@@ -1,83 +1,92 @@
 <?php
 
-function mos_rest_api_order($request)
-{
-  woo_init();
+    function mos_rest_api_order( $request ) {
+        woo_init();
 
-  $response = ['status' => 2];
-  $user = wp_get_current_user();
-  $params = $request->get_params();
-  $files = $request->get_file_params();
+        $response = [ 'status' => 2 ];
+        $user     = wp_get_current_user();
+        $params   = $request->get_params();
+        $files    = $request->get_file_params();
 
-  if (!is_user_logged_in()) {
-    $response['status'] = 1;
-    return rest_ensure_response($response);
-  }
+        if ( ! is_user_logged_in() ) {
+            $response['status'] = 1;
 
-  // Save files in wp-content/uploads/orders directory
-  $upload_dir = wp_upload_dir()['basedir'] . '/orders/';
-  if (!file_exists($upload_dir)) {
-    mkdir($upload_dir, 0755, true);
-  }
+            return rest_ensure_response( $response );
+        }
 
-  $product_map = array();
-  $product_ids = array();
-  $index = 0;
-  foreach ($files as $key => $file) {
-    $filename = $file['name'];
-    $tmp_name = $file['tmp_name'];
-    $path = $upload_dir . $filename;
-    move_uploaded_file($tmp_name, $path);
+        // Save files in wp-content/uploads/orders directory
+        $upload_dir = wp_upload_dir()['basedir'] . '/orders/';
+        if ( ! file_exists( $upload_dir ) ) {
+            mkdir( $upload_dir, 0755, true );
+        }
 
-    $index = intval(str_replace("file-", "", $key));
+        $product_map = array();
+        $product_ids = array();
 
-    $price = $params['price-' . $index];
-    $quantity = $params['quantity-' . $index];
+        WC()->cart->empty_cart();
 
-    $response['key'] = $index;
-    $response['quantity'] = $quantity;
+        foreach ( $files as $key => $file ) {
+            $filename = $file['name'];
+            $tmp_name = $file['tmp_name'];
+            $path     = $upload_dir . $filename;
+            move_uploaded_file( $tmp_name, $path );
 
-    $new_sku = generate_sku();
+            $index = intval( str_replace( "file-", "", $key ) );
 
-    $product_id = wp_insert_post(array(
-      'post_type' => 'product',
-      'post_title' => $filename,
-      'post_content' => $filename,
-      'post_status' => 'publish',
-      'meta_input' => array(
-        '_price' => $price,
-        '_stock_status' => 'instock',
-        '_stock' => $quantity,
-        '_sku' => $new_sku,
-        '_regular_price' => $price,
-        '_visibility' => 'visible',
-      ),
-    ));
+            $price    = $params[ 'price-' . $index ];
+            $quantity = $params[ 'quantity-' . $index ];
 
-    // Add download link as meta field
-    update_post_meta($product_id, 'download_link', $path);
+            $response['key']      = $index;
+            $response['quantity'] = $quantity;
 
-    // Add product to map
-    $product_map['product-' . $key] = array(
-      'file' => $path,
-      'price' => $price,
-      'quantity' => $quantity
-    );
+            $new_sku = generate_sku();
 
-    // Add product to cart
-    WC()->cart->add_to_cart($product_id, $quantity);
-    $product_ids[] = $product_id;
-  }
+            $product_id = wp_insert_post( array(
+                'post_type'    => 'product',
+                'post_title'   => $filename,
+                'post_content' => $filename,
+                'post_status'  => 'publish',
+                'meta_input'   => array(
+                    '_price'         => $price,
+                    '_stock_status'  => 'instock',
+                    '_stock'         => $quantity,
+                    '_sku'           => $new_sku,
+                    '_regular_price' => $price,
+                    '_visibility'    => 'visible',
+                ),
+            ) );
 
-  $response['message'] = 'Products created successfully';
+            // Add download link as meta field
+            update_post_meta( $product_id, 'download_link', $path );
 
-  // Generate cart URL
-  $cart_url = wc_get_cart_url();
+            // Add product to map
+            $product_map[ 'product-' . $key ] = array(
+                'file'     => $path,
+                'price'    => $price,
+                'quantity' => $quantity
+            );
 
-  $response['cart_url'] = $cart_url;
-  $response['product_map'] = $product_map;
-  $response['user'] = $user->data->ID;
-  $response['params'] = $params;
-  $response['files'] = $files;
-  return rest_ensure_response($response);
-}
+            // Add product to cart
+            WC()->cart->add_to_cart( $product_id, $quantity );
+            $product_ids[] = $product_id;
+        }
+
+        $response['message'] = 'Products created successfully';
+
+        // Generate cart URL
+        $cart_url = wc_get_cart_url();
+        $cart     = WC()->cart->get_cart();
+
+        // Generate checkout URL
+        $checkout_url = wc_get_checkout_url();
+
+        $response['cart_url']     = $cart_url;
+        $response['checkout_url'] = $checkout_url;
+        $response['cart']         = $cart;
+        $response['product_map']  = $product_map;
+        $response['user']         = $user->data->ID;
+        $response['params']       = $params;
+        $response['files']        = $files;
+
+        return rest_ensure_response( $response );
+    }

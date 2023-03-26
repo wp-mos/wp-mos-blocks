@@ -41,20 +41,12 @@
 
                     </div>
 
-                    <!-- <div class="order-form-close">
-                      <button type="button" class="order-form-close-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 18L18 6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                          <path d="M18 18L6 6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                      </button>
-                    </div> -->
-
                 </div>
 
                 <div class="order-form-add-group">
                     <button type="button" id="order-form-add"
-                            class="form-subscribe-button form-subscribe-button-secondary" data-id="0">Adaugă un fișier
+                            class="form-subscribe-button form-subscribe-button-secondary order-form-add"
+                            data-id="0">Adaugă un fișier
                     </button>
                     <div class="small-text">Fișiere permise: dxf</div>
                     <div class="small-text">Dimensiunea maximă: 50Mb</div>

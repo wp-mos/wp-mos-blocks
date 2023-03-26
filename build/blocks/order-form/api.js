@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   const data = [];
   const loader = "...";
-  let prevId = 0;
+  let lastId = 0;
   let totalPrice = null;
 
   // Init data
@@ -265,23 +265,15 @@ document.addEventListener("DOMContentLoaded", () => {
     newGroup.appendChild(closeButtonBlock);
     orderForm.insertBefore(newGroup, beforeGroup);
     closeButton.addEventListener("click", event => {
-      data[event.currentTarget.dataset.id] = null;
+      const id = event.currentTarget.dataset.id;
+      data[id] = null;
       formGroup.parentNode.removeChild(newGroup);
-      // getResult(id);
+      const filterData = data.filter(item => item !== null);
+      const lastElement = filterData.pop();
+      lastId = data.indexOf(lastElement);
     });
-
     return newGroup;
   };
-  const addGroupHandler = () => {
-    if (!firstFileInput.files[0]) return;
-    prevId++;
-    let newGroup = buildBlock(prevId);
-    initData(prevId, newGroup);
-    formGroupListener(newGroup, prevId);
-  };
-
-  // Add new group
-  addGroup.addEventListener("click", () => addGroupHandler());
   const init = () => {
     initData(0, formGroup);
     formGroupListener(formGroup, 0);
@@ -292,6 +284,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   init();
+  const addGroupHandler = () => {
+    const currentGroup = data[lastId].group;
+    const currentGroupFile = currentGroup.querySelector(".order-form-file");
+    const currentGroupId = +data[lastId].group.dataset.id;
+    if (!currentGroupFile.files[0]) return;
+    lastId++;
+    let newGroup = buildBlock(lastId);
+    initData(lastId, newGroup);
+    formGroupListener(newGroup, lastId);
+  };
+
+  // Add new group
+  addGroup.addEventListener("click", () => addGroupHandler());
   orderForm.addEventListener("submit", async event => {
     event.preventDefault();
     const formData = new FormData(orderForm);
@@ -313,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         const checkoutUrl = data["checkout_url"];
         orderForm.reset();
-        location.replace(checkoutUrl);
+        // location.replace(checkoutUrl);
       } else {
         console.log("Error:", response.status);
       }

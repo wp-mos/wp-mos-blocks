@@ -35,6 +35,7 @@
 
             $price    = $params[ 'price-' . $index ];
             $quantity = $params[ 'quantity-' . $index ];
+            $material = $params[ 'material-' . $index ];
 
             $response['key']      = $index;
             $response['quantity'] = $quantity;
@@ -44,7 +45,7 @@
             $product_id = wp_insert_post( array(
                 'post_type'    => 'product',
                 'post_title'   => $filename,
-                'post_content' => $filename,
+                'post_content' => 'Material: ' . $material,
                 'post_status'  => 'publish',
                 'meta_input'   => array(
                     '_price'         => $price,

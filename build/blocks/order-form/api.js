@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data[id] = {
       group: group,
       status: null,
-      price: null,
+      prices: null,
       lastMod: null,
       material: null,
       quantity: null,
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Listen for form group change
   const formGroupListener = (group, id) => {
     group.addEventListener("change", () => {
-      // getResult(id);
+      getResult(id);
     });
   };
   const updateGroup = id => {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let width = Math.round(group.fileWidth);
       let height = Math.round(group.fileHeight);
       group.group.querySelector(".order-form-dimensions").innerHTML = `${width} x ${height} mm`;
-      group.group.productPrice = price;
+      group.productPrice = group.prices[materialSelect.selectedIndex].unit_price;
       totalPrice += price;
       group.material = materialSelect[materialSelect.selectedIndex].getAttribute("data-name");
     });
@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const addGroupHandler = () => {
     const currentGroup = data[lastId].group;
     const currentGroupFile = currentGroup.querySelector(".order-form-file");
-    const currentGroupId = +data[lastId].group.dataset.id;
     if (!currentGroupFile.files[0]) return;
     lastId++;
     let newGroup = buildBlock(lastId);
@@ -300,9 +299,16 @@ document.addEventListener("DOMContentLoaded", () => {
   orderForm.addEventListener("submit", async event => {
     event.preventDefault();
     const formData = new FormData(orderForm);
-    data.forEach((item, index) => {
-      formData.append(`price-${index}`, 9.99);
-      formData.append(`quantity-${index}`, 1);
+    dataClened = data.filter(item => item !== null);
+    dataClened.forEach((item, index) => {
+      if (item) {
+        const {
+          productPrice,
+          material
+        } = item;
+        formData.append(`material-${index}`, material);
+        formData.append(`price-${index}`, productPrice);
+      }
     });
     try {
       const response = await fetch(settings.root, {
@@ -318,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         const checkoutUrl = data["checkout_url"];
         orderForm.reset();
-        // location.replace(checkoutUrl);
+        location.replace(checkoutUrl);
       } else {
         console.log("Error:", response.status);
       }

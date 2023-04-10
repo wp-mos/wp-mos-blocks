@@ -24,6 +24,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let totalPrice = null;
 
+  // Translate
+  let currentLink = window.location.href;
+  let fileText = "";
+  let materialText = "";
+  let quantityText = "";
+  let dimensionsText = "";
+  let priceText = "";
+
+  if (currentLink.includes("/en/")) {
+    fileText = "File";
+    materialText = "Material";
+    quantityText = "Quantity";
+    dimensionsText = "Dimensions";
+    priceText = "Price";
+  } else if (currentLink.includes("/hu/")) {
+    fileText = "Fájl Név";
+    materialText = "Anyag";
+    quantityText = "Énekelni";
+    dimensionsText = "Méretek";
+    priceText = "Ár";
+  } else {
+    fileText = "Fișier";
+    materialText = "Material";
+    quantityText = "Cantitate";
+    dimensionsText = "Dimensiuni";
+    priceText = "Preț";
+  }
+
   // Init data
   const initData = (id, group) => {
     data[id] = {
@@ -209,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fileBlock.classList.add("order-form-block", "order-form-block-file");
     const formMeta = document.createElement("div");
     formMeta.classList.add("order-form-label");
-    formMeta.innerHTML = "Fișier";
+    formMeta.innerHTML = fileText;
     const formBlockLabel = document.createElement("label");
     formBlockLabel.classList.add(
       "form-subscribe-button",
@@ -238,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const materialBlockLabel = document.createElement("label");
     materialBlockLabel.classList.add("order-form-label");
     materialBlockLabel.setAttribute("for", `material-${id}`);
-    materialBlockLabel.innerHTML = "Material";
+    materialBlockLabel.innerHTML = materialText;
     const materialBlockSelect = document.createElement("select");
     materialBlockSelect.classList.add(
       "order-form-material",
@@ -260,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const quantityBlockLabel = document.createElement("label");
     quantityBlockLabel.classList.add("order-form-label");
     quantityBlockLabel.setAttribute("for", `quantity-${id}`);
-    quantityBlockLabel.innerHTML = "Cantitate";
+    quantityBlockLabel.innerHTML = quantityText;
     const quantityBlockInput = document.createElement("input");
     quantityBlockInput.classList.add(
       "order-form-quantity",
@@ -278,14 +306,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add status block
     const statusBlock = document.createElement("div");
     statusBlock.classList.add("order-form-block-status", "order-form-block-20");
+
+    const statusOrderFormSubBlockDimensions = document.createElement("div");
+    statusOrderFormSubBlockDimensions.classList.add("order-form-sub-block");
+    const statusLabelDimmensions = document.createElement("div");
+    statusLabelDimmensions.classList.add("order-form-label");
+    statusLabelDimmensions.innerHTML = dimensionsText;
     const statusBlockDimensions = document.createElement("div");
     statusBlockDimensions.classList.add("order-form-dimensions");
     statusBlockDimensions.innerHTML = "-";
+
+    statusOrderFormSubBlockDimensions.appendChild(statusLabelDimmensions);
+    statusOrderFormSubBlockDimensions.appendChild(statusBlockDimensions);
+
     const statusBlockPrice = document.createElement("div");
     statusBlockPrice.classList.add("order-form-status");
+    const statusOrderFormSubBlockPrice = document.createElement("div");
+    statusOrderFormSubBlockPrice.classList.add("order-form-sub-block");
+    const statusLabelPrice = document.createElement("div");
+    statusLabelPrice.classList.add("order-form-label");
+    statusLabelPrice.innerHTML = priceText;
     statusBlockPrice.innerHTML = "-";
-    statusBlock.appendChild(statusBlockDimensions);
-    statusBlock.appendChild(statusBlockPrice);
+
+    statusOrderFormSubBlockPrice.appendChild(statusLabelPrice);
+    statusOrderFormSubBlockPrice.appendChild(statusBlockPrice);
+
+    statusBlock.appendChild(statusOrderFormSubBlockDimensions);
+    statusBlock.appendChild(statusOrderFormSubBlockPrice);
 
     // Close button
     const closeButtonBlock = document.createElement("div");

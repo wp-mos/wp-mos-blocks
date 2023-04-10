@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-10T06:57:28+00:00\n"
+"POT-Creation-Date: 2023-04-10T09:46:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: mos\n"
@@ -37,94 +37,171 @@ msgstr ""
 msgid "Sign in"
 msgstr ""
 
-#: includes/blocks/auth-button.php:32
-msgid "My Account"
-msgstr ""
-
-#: includes/blocks/auth-button.php:34
-msgid "New Order"
-msgstr ""
-
-#: includes/blocks/auth-button.php:36
-msgid "Logout"
-msgstr ""
-
-#: includes/blocks/login-form.php:16
-#: includes/blocks/login-form.php:26
+#: includes/blocks/login-form.php:19
+#: includes/blocks/login-form.php:29
 msgid "Invalid user and password."
 msgstr ""
 
-#: includes/blocks/login-form.php:49
-#: includes/blocks/login-form.php:51
-#: includes/blocks/register-form.php:100
-#: includes/blocks/register-form.php:102
+#: includes/blocks/login-form.php:60
+#: includes/blocks/login-form.php:62
+#: includes/blocks/register-form.php:109
+#: includes/blocks/register-form.php:111
+#: includes/blocks/user-content.php:60
 msgid "Email"
 msgstr ""
 
-#: includes/blocks/login-form.php:56
-#: includes/blocks/login-form.php:58
-#: includes/blocks/register-form.php:120
-#: includes/blocks/register-form.php:122
+#: includes/blocks/login-form.php:67
+#: includes/blocks/login-form.php:69
+#: includes/blocks/register-form.php:129
+#: includes/blocks/register-form.php:131
 msgid "Password"
 msgstr ""
 
-#: includes/blocks/login-form.php:65
+#: includes/blocks/login-form.php:76
 msgid "Don't have an account yet?"
 msgstr ""
 
-#: includes/blocks/login-form.php:67
+#: includes/blocks/login-form.php:88
 msgid "Register"
 msgstr ""
 
-#: includes/blocks/login-form.php:70
+#: includes/blocks/login-form.php:91
 msgid "Log in to your account"
 msgstr ""
 
-#: includes/blocks/register-form.php:20
+#: includes/blocks/register-form.php:22
+#: includes/blocks/register-form.php:85
 msgid "First Name is required"
 msgstr ""
 
-#: includes/blocks/register-form.php:24
+#: includes/blocks/register-form.php:26
+#: includes/blocks/register-form.php:100
 msgid "Last Name is required"
 msgstr ""
 
-#: includes/blocks/register-form.php:28
+#: includes/blocks/register-form.php:30
 msgid "Email is required"
 msgstr ""
 
-#: includes/blocks/register-form.php:30
+#: includes/blocks/register-form.php:32
 msgid "Email is invalid"
 msgstr ""
 
-#: includes/blocks/register-form.php:32
+#: includes/blocks/register-form.php:34
+#: includes/blocks/register-form.php:120
 msgid "This email is already registered"
 msgstr ""
 
-#: includes/blocks/register-form.php:36
+#: includes/blocks/register-form.php:38
+#: includes/blocks/register-form.php:136
 msgid "Password is required"
 msgstr ""
 
-#: includes/blocks/register-form.php:38
+#: includes/blocks/register-form.php:40
 msgid "Passwords do tot match"
 msgstr ""
 
-#: includes/blocks/register-form.php:69
-#: includes/blocks/register-form.php:71
+#: includes/blocks/register-form.php:78
+#: includes/blocks/register-form.php:80
+#: includes/blocks/user-content.php:31
 msgid "First Name"
 msgstr ""
 
-#: includes/blocks/register-form.php:84
-#: includes/blocks/register-form.php:86
+#: includes/blocks/register-form.php:93
+#: includes/blocks/register-form.php:95
+#: includes/blocks/user-content.php:36
 msgid "Last Name"
 msgstr ""
 
-#: includes/blocks/register-form.php:136
-#: includes/blocks/register-form.php:139
+#: includes/blocks/register-form.php:145
+#: includes/blocks/register-form.php:148
 msgid "Repeat Password"
 msgstr ""
 
-#: includes/blocks/register-form.php:155
+#: includes/blocks/register-form.php:153
+msgid "Repeat Password is required"
+msgstr ""
+
+#: includes/blocks/register-form.php:156
+msgid "Passwords do not match"
+msgstr ""
+
+#: includes/blocks/register-form.php:165
 msgid "Create Account"
+msgstr ""
+
+#: includes/blocks/user-content.php:17
+#: includes/blocks/user-content.php:26
+msgid "My Account"
+msgstr ""
+
+#: includes/blocks/user-content.php:18
+msgid "Change Password"
+msgstr ""
+
+#: includes/blocks/user-content.php:19
+#: includes/blocks/user-content.php:114
+msgid "My Orders"
+msgstr ""
+
+#: includes/blocks/user-content.php:42
+msgid "Company"
+msgstr ""
+
+#: includes/blocks/user-content.php:45
+msgid "Company Name"
+msgstr ""
+
+#: includes/blocks/user-content.php:50
+msgid "VAT"
+msgstr ""
+
+#: includes/blocks/user-content.php:57
+msgid "Contact"
+msgstr ""
+
+#: includes/blocks/user-content.php:65
+msgid "Phone"
+msgstr ""
+
+#: includes/blocks/user-content.php:73
+msgid "Address"
+msgstr ""
+
+#: includes/blocks/user-content.php:75
+msgid "Streat"
+msgstr ""
+
+#: includes/blocks/user-content.php:80
+msgid "City"
+msgstr ""
+
+#: includes/blocks/user-content.php:85
+msgid "Postcode"
+msgstr ""
+
+#: includes/blocks/user-content.php:90
+msgid "Update Details"
+msgstr ""
+
+#: includes/blocks/user-content.php:95
+msgid "Change password"
+msgstr ""
+
+#: includes/blocks/user-content.php:101
+msgid "Your email address"
+msgstr ""
+
+#: includes/blocks/user-content.php:107
+msgid "Send email to reset your password."
+msgstr ""
+
+#: includes/blocks/user-content.php:115
+msgid "Orders"
+msgstr ""
+
+#: includes/blocks/user-content.php:189
+msgid "A password reset email has been sent to your email address."
 msgstr ""
 
 #: build/blocks/login-form/index.js:26

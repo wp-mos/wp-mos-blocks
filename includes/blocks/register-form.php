@@ -5,7 +5,9 @@
         }
 
         // Perform validation on form data
-        $errors = array();
+        $errors           = array();
+        $current_language = pll_current_language();
+
 
         // Process form submission
         if ( isset( $_POST['register-form-submit'] ) ) {
@@ -52,7 +54,14 @@
 
                     // Log user in
                     wp_set_auth_cookie( $user_id, true );
-                    wp_redirect( site_url( '/contul-meu' ) );
+                    if ( $current_language == 'ro' ) {
+                        wp_redirect( site_url( '/contul-meu' ) );
+                    } else if ( $current_language == 'en' ) {
+                        wp_redirect( site_url( '/en/my-account' ) );
+                    } else if ( $current_language == 'ru' ) {
+                        wp_redirect( site_url( '/hu/a-fiokom/' ) );
+                    }
+
                     exit;
                 }
             }
@@ -73,7 +82,7 @@
                         <?php
                             if ( isset( $_POST['register-form-submit'] ) ) {
                                 if ( empty( $_POST['register-form-name'] ) ) {
-                                    echo '<div class="error">First Name is required</div>';
+                                    echo '<div class="error">' . __( 'First Name is required', 'mos' ) . '</div>';
                                 }
                             }
                         ?>
@@ -88,7 +97,7 @@
                         <?php
                             if ( isset( $_POST['register-form-submit'] ) ) {
                                 if ( empty( $_POST['register-form-surname'] ) ) {
-                                    echo '<div class="error">Last Name is required</div>';
+                                    echo '<div class="error">' . __( 'Last Name is required', 'mos' ) . '</div>';
                                 }
                             }
                         ?>
@@ -108,7 +117,7 @@
                                 } elseif ( ! is_email( $_POST['register-form-email'] ) ) {
                                     echo '<div class="error">Email is invalid</div>';
                                 } elseif ( email_exists( $_POST['register-form-email'] ) ) {
-                                    echo '<div class="error">This email is already registered</div>';
+                                    echo '<div class="error">' . __( 'This email is already registered', 'mos' ) . '</div>';
                                 }
                             }
                         ?>
@@ -124,7 +133,7 @@
                         <?php
                             if ( isset( $_POST['register-form-submit'] ) ) {
                                 if ( empty( $_POST['register-form-password'] ) ) {
-                                    echo '<div class="error">Password is required</div>';
+                                    echo '<div class="error">' . __( 'Password is required', 'mos' ) . '</div>';
                                 }
                             }
                         ?>
@@ -141,9 +150,10 @@
                         <?php
                             if ( isset( $_POST['register-form-submit'] ) ) {
                                 if ( empty( $_POST['register-form-confirm-password'] ) ) {
-                                    echo '<div class="error">Repeat Password is required</div>';
+                                    echo '<div class="error">' . __( 'Repeat Password is required', 'mos' ) . '</div>';
+
                                 } elseif ( $_POST['register-form-password'] != $_POST['register-form-confirm-password'] ) {
-                                    echo '<div class="error">Passwords do not match</div>';
+                                    echo '<div class="error">' . __( 'Passwords do not match', 'mos' ) . '</div>';
                                 }
                             }
                         ?>

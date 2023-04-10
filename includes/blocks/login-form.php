@@ -8,6 +8,9 @@
         $output     = '';
         $login_data = array();
 
+        // Get the current language
+        $current_language = pll_current_language();
+
         if ( isset( $_POST['login-form-email'] ) && isset( $_POST['login-form-password'] ) ) {
             $email    = sanitize_email( $_POST['login-form-email'] );
             $password = sanitize_text_field( $_POST['login-form-password'] );
@@ -32,7 +35,15 @@
                     // Set the token as a cookie
                     setcookie( 'auth_token', $token, time() + ( 86400 * 30 ), "/" ); // Cookie will expire in 30 days
                     wp_set_auth_cookie( $user->ID );
-                    wp_safe_redirect( home_url() . '/comanda-noua/' );
+
+                    if ( $current_language == 'ro' ) {
+                        wp_safe_redirect( home_url() . '/comanda-noua/' );
+                    } else if ( $current_language == 'en' ) {
+                        wp_safe_redirect( home_url() . '/en/new-order/' );
+                    } else if ( $current_language == 'hu' ) {
+                        wp_safe_redirect( home_url() . '/hu/uj-online-rendeles/' );
+                    }
+
                     exit;
                 }
             }
@@ -63,8 +74,18 @@
                 <div class="form-footer">
                     <div class="form-footer-meta">
                         <?php esc_html_e( 'Don\'t have an account yet?', 'mos' ); ?>
+                        <?php
+                            $register_url = '';
+                            if ( $current_language == 'ro' ) {
+                                $register_url = site_url() . '/creeaza-cont-nou/';
+                            } else if ( $current_language == 'en' ) {
+                                $register_url = site_url() . '/en/new-account/';
+                            } else if ( $current_language == 'hu' ) {
+                                $register_url = site_url() . '/hu/uj-felhasznalo-letrehozasa/';
+                            }
+                        ?>
                         <a class="animated-link"
-                           href="<?php echo esc_url( site_url( '/inregistrare' ) ); ?>"><?php esc_html_e( 'Register', 'mos' ); ?></a>
+                           href="<?php echo $register_url; ?>"><?php esc_html_e( 'Register', 'mos' ); ?></a>
                     </div>
                     <button class="form-subscribe-button"
                             type="submit"><?php esc_html_e( 'Log in to your account', 'mos' ); ?></button>

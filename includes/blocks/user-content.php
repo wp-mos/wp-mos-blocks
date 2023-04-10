@@ -14,55 +14,55 @@
             <div class="wp-block-mos-blocks-auth-user-content-sidebar">
 
                 <ul class="wp-block-mos-blocks-auth-user-content-sidebar-navigation">
-                    <li><a href="#contul-meu" class="is-active">Contul meu</a></li>
-                    <li><a href="#schimba-parola">Schimba parola</a></li>
-                    <li><a href="#comenzile-mele">Comenzile Mele</a></li>
+                    <li><a href="#contul-meu" class="is-active"><?php _e( 'My Account', 'mos' ); ?></a></li>
+                    <li><a href="#schimba-parola"><?php _e( 'Change Password', 'mos' ); ?></a></li>
+                    <li><a href="#comenzile-mele"><?php _e( 'My Orders', 'mos' ); ?></a></li>
                 </ul>
 
             </div>
 
             <div class="wp-block-mos-blocks-auth-user-content-content">
                 <div id="contul-meu" class="wp-block-mos-blocks-auth-user-content-content-wrapper">
-                    <h6>Contul Meu</h6>
+                    <h6><?php _e( 'My Account', 'mos' ); ?></h6>
                     <form method="post" action="" class="wp-block-mos-blocks-auth-user-content-form">
 
                         <div class="form-group-name">
                             <div class="form-block">
-                                <label for="first_name">Nume:</label>
+                                <label for="first_name"><?php _e( 'First Name', 'mos' ); ?></label>
                                 <input type="text" name="first_name" value="<?php echo $current_user->first_name; ?>">
                             </div>
 
                             <div class="form-block">
-                                <label for="last_name">Prenume:</label>
+                                <label for="last_name"><?php _e( 'Last Name', 'mos' ); ?></label>
                                 <input type="text" name="last_name" value="<?php echo $current_user->last_name; ?>">
                             </div>
                         </div>
 
                         <div class="form-group-company">
-                            <h6 class="small">Companie</h6>
+                            <h6 class="small"><?php _e( 'Company', 'mos' ); ?></h6>
                             <div>
                                 <div class="form-block">
-                                    <label for="company">Nume Companie:</label>
+                                    <label for="company"><?php _e( 'Company Name', 'mos' ); ?></label>
                                     <input type="text" name="company" value="<?php echo $current_user->company; ?>">
                                 </div>
 
                                 <div class="form-block">
-                                    <label for="cui">RO/CUI:</label>
+                                    <label for="cui"><?php _e( 'VAT', 'mos' ); ?></label>
                                     <input type="text" name="cui" value="<?php echo $current_user->cui; ?>">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group-contact">
-                            <h6 class="small">Contact</h6>
+                            <h6 class="small"><?php _e( 'Contact', 'mos' ); ?></h6>
                             <div>
                                 <div class="form-block">
-                                    <label for="email">Email:</label>
+                                    <label for="email"><?php _e( 'Email', 'mos' ); ?></label>
                                     <input type="email" name="email" value="<?php echo $current_user->user_email; ?>">
                                 </div>
 
                                 <div class="form-block">
-                                    <label for="phone">Telefon:</label>
+                                    <label for="phone"><?php _e( 'Phone', 'mos' ); ?></label>
                                     <input type="text" name="phone" value="<?php echo $current_user->phone; ?>">
                                 </div>
                             </div>
@@ -70,48 +70,49 @@
                         </div>
 
                         <div class="form-group-address">
-                            <h6 class="small">Adresa</h6>
+                            <h6 class="small"><?php _e( 'Address', 'mos' ); ?></h6>
                             <div class="form-block">
-                                <label for="address">Strada:</label>
+                                <label for="address"><?php _e( 'Streat', 'mos' ); ?></label>
                                 <input type="text" name="address" value="<?php echo $current_user->address; ?>">
                             </div>
 
                             <div class="form-block">
-                                <label for="city">Localitate:</label>
+                                <label for="city"><?php _e( 'City', 'mos' ); ?></label>
                                 <input type="text" name="city" value="<?php echo $current_user->city; ?>">
                             </div>
 
                             <div class="form-block">
-                                <label for="postcode">Cod Postal:</label>
+                                <label for="postcode"><?php _e( 'Postcode', 'mos' ); ?></label>
                                 <input type="text" name="postcode" value="<?php echo $current_user->postcode; ?>">
                             </div>
                         </div>
 
-                        <input type="submit" value="Update" class="form-submit">
+                        <input type="submit" value="<?php _e( 'Update Details', 'mos' ); ?>" class="form-submit">
                     </form>
                 </div>
 
                 <div id="schimba-parola" class="wp-block-mos-blocks-auth-user-content-content-wrapper">
-                    <h6>Schimba Parola</h6>
+                    <h6><?php _e( 'Change password', 'mos' ); ?></h6>
 
                     <form method="post" action="" class="wp-block-mos-blocks-auth-user-content-reset-form">
                         <div class="form-group-reset">
                             <div>
                                 <div class="form-block">
-                                    <label for="email">Adresa ta de email</label>
+                                    <label for="email"><?php _e( 'Your email address', 'mos' ); ?></label>
                                     <input type="email" name="email">
                                 </div>
                             </div>
                         </div>
                         <?php wp_nonce_field( 'reset_password', 'nonce_field' ); ?>
-                        <input type="submit" value="Trimite e-mail pentru resetarea parolei" class="form-submit">
+                        <input type="submit" value="<?php _e( 'Send email to reset your password.', 'mos' ); ?>"
+                               class="form-submit">
                     </form>
 
                 </div>
 
                 <div id="comenzile-mele" class="wp-block-mos-blocks-auth-user-content-content-wrapper">
-                    <h6>Comenzile Mele</h6>
-                    <p>Lista Comenzi</p>
+                    <h6><?php _e( 'My Orders', 'mos' ); ?></h6>
+                    <p><?php _e( 'Orders', 'mos' ); ?></p>
                 </div>
 
             </div>
@@ -129,14 +130,10 @@
             // Validate the email address
             $email = sanitize_email( $_POST['email'] );
             if ( ! is_email( $email ) ) {
-                // The email address is invalid, so display an error message
                 wp_die( 'Error: Invalid email address.' );
             }
 
             $phone = sanitize_text_field( $_POST['phone'] );
-            // if(!preg_match('/\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/', $phone)) {
-            //   wp_die( 'Error: Invalid phone number.' );
-            // }
 
             $address  = sanitize_text_field( $_POST['address'] );
             $city     = sanitize_text_field( $_POST['city'] );
@@ -189,7 +186,7 @@
             wp_mail( $to, $subject, $message );
 
             // Display a message to the user
-            echo 'A password reset email has been sent to your email address.';
+            _e( 'A password reset email has been sent to your email address.', 'mos' );
         }
 
         $output = ob_get_contents();

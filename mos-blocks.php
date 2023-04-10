@@ -9,8 +9,8 @@
      * Version:           1.0.0
      * Requires at least: 6.0
      * Requires PHP:      7.4
-     * Text Domain:       /mos
-     * Domain Path:       /languages
+     * Text Domain:       mos
+     * Domain Path:       languages
      */
 
     if ( ! function_exists( 'add_action' ) ) {
@@ -42,3 +42,4 @@
     add_action( 'admin_init', 'mos_redirect_clients_to_frontend' );
     add_action( 'template_redirect', 'mos_redirect_if_not_logged_in' );
     add_action( 'template_redirect', 'mos_redirect_if_logged_in' );
+

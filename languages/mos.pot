@@ -1,0 +1,218 @@
+# Copyright (C) 2023 Harpoon Team
+# This file is distributed under the same license as the Mos Blocks plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mos Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mos-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-10T06:57:28+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: mos\n"
+
+#. Plugin Name of the plugin
+msgid "Mos Blocks"
+msgstr ""
+
+#. Description of the plugin
+msgid "A plugin for adding custom blocks to Mos Theme."
+msgstr ""
+
+#. Author of the plugin
+msgid "Harpoon Team"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://harpoon.ro/"
+msgstr ""
+
+#: includes/blocks/auth-button.php:6
+#: build/blocks/auth-button/index.js:29
+#: src/blocks/auth-button/edit.js:11
+#: build/blocks/auth-button/index.js:11
+msgid "Sign in"
+msgstr ""
+
+#: includes/blocks/auth-button.php:32
+msgid "My Account"
+msgstr ""
+
+#: includes/blocks/auth-button.php:34
+msgid "New Order"
+msgstr ""
+
+#: includes/blocks/auth-button.php:36
+msgid "Logout"
+msgstr ""
+
+#: includes/blocks/login-form.php:16
+#: includes/blocks/login-form.php:26
+msgid "Invalid user and password."
+msgstr ""
+
+#: includes/blocks/login-form.php:49
+#: includes/blocks/login-form.php:51
+#: includes/blocks/register-form.php:100
+#: includes/blocks/register-form.php:102
+msgid "Email"
+msgstr ""
+
+#: includes/blocks/login-form.php:56
+#: includes/blocks/login-form.php:58
+#: includes/blocks/register-form.php:120
+#: includes/blocks/register-form.php:122
+msgid "Password"
+msgstr ""
+
+#: includes/blocks/login-form.php:65
+msgid "Don't have an account yet?"
+msgstr ""
+
+#: includes/blocks/login-form.php:67
+msgid "Register"
+msgstr ""
+
+#: includes/blocks/login-form.php:70
+msgid "Log in to your account"
+msgstr ""
+
+#: includes/blocks/register-form.php:20
+msgid "First Name is required"
+msgstr ""
+
+#: includes/blocks/register-form.php:24
+msgid "Last Name is required"
+msgstr ""
+
+#: includes/blocks/register-form.php:28
+msgid "Email is required"
+msgstr ""
+
+#: includes/blocks/register-form.php:30
+msgid "Email is invalid"
+msgstr ""
+
+#: includes/blocks/register-form.php:32
+msgid "This email is already registered"
+msgstr ""
+
+#: includes/blocks/register-form.php:36
+msgid "Password is required"
+msgstr ""
+
+#: includes/blocks/register-form.php:38
+msgid "Passwords do tot match"
+msgstr ""
+
+#: includes/blocks/register-form.php:69
+#: includes/blocks/register-form.php:71
+msgid "First Name"
+msgstr ""
+
+#: includes/blocks/register-form.php:84
+#: includes/blocks/register-form.php:86
+msgid "Last Name"
+msgstr ""
+
+#: includes/blocks/register-form.php:136
+#: includes/blocks/register-form.php:139
+msgid "Repeat Password"
+msgstr ""
+
+#: includes/blocks/register-form.php:155
+msgid "Create Account"
+msgstr ""
+
+#: build/blocks/login-form/index.js:26
+#: build/blocks/order-form/index.js:26
+#: build/blocks/register-form/index.js:26
+#: build/blocks/user-content/index.js:26
+#: build/blocks/user-hero/index.js:26
+#: src/blocks/login-form/edit.js:9
+#: src/blocks/order-form/edit.js:9
+#: src/blocks/register-form/edit.js:9
+#: src/blocks/user-content/edit.js:9
+#: src/blocks/user-hero/edit.js:9
+#: build/blocks/login-form/index.js:9
+#: build/blocks/order-form/index.js:9
+#: build/blocks/register-form/index.js:9
+#: build/blocks/user-content/index.js:9
+#: build/blocks/user-hero/index.js:9
+msgid "This block is not editable."
+msgstr ""
+
+#: build/blocks/auth-button/block.json
+#: src/blocks/auth-button/block.json
+msgctxt "block title"
+msgid "Auth Button"
+msgstr ""
+
+#: build/blocks/auth-button/block.json
+#: src/blocks/auth-button/block.json
+msgctxt "block description"
+msgid "Adds the authentication button to the editor"
+msgstr ""
+
+#: build/blocks/login-form/block.json
+#: src/blocks/login-form/block.json
+msgctxt "block title"
+msgid "Login Form"
+msgstr ""
+
+#: build/blocks/login-form/block.json
+#: src/blocks/login-form/block.json
+msgctxt "block description"
+msgid "Adds login form to the page"
+msgstr ""
+
+#: build/blocks/order-form/block.json
+#: src/blocks/order-form/block.json
+msgctxt "block title"
+msgid "Order Form"
+msgstr ""
+
+#: build/blocks/order-form/block.json
+#: src/blocks/order-form/block.json
+msgctxt "block description"
+msgid "Adds online order form"
+msgstr ""
+
+#: build/blocks/register-form/block.json
+#: src/blocks/register-form/block.json
+msgctxt "block title"
+msgid "Register Form"
+msgstr ""
+
+#: build/blocks/register-form/block.json
+#: src/blocks/register-form/block.json
+msgctxt "block description"
+msgid "Adds register form to the page"
+msgstr ""
+
+#: build/blocks/user-content/block.json
+#: src/blocks/user-content/block.json
+msgctxt "block title"
+msgid "User Content"
+msgstr ""
+
+#: build/blocks/user-content/block.json
+#: src/blocks/user-content/block.json
+msgctxt "block description"
+msgid "User content block"
+msgstr ""
+
+#: build/blocks/user-hero/block.json
+#: src/blocks/user-hero/block.json
+msgctxt "block title"
+msgid "User Hero"
+msgstr ""
+
+#: build/blocks/user-hero/block.json
+#: src/blocks/user-hero/block.json
+msgctxt "block description"
+msgid "Adds the authenticated user hero details to the editor"
+msgstr ""

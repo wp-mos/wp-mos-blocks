@@ -43,3 +43,5 @@
     add_action( 'template_redirect', 'mos_redirect_if_not_logged_in' );
     add_action( 'template_redirect', 'mos_redirect_if_logged_in' );
 
+    add_action( 'init', 'mos_load_translations' );
+

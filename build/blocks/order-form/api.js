@@ -30,24 +30,28 @@ document.addEventListener("DOMContentLoaded", () => {
   let quantityText = "";
   let dimensionsText = "";
   let priceText = "";
+  let checkoutUrl = "";
   if (currentLink.includes("/en/")) {
     fileText = "File";
     materialText = "Material";
     quantityText = "Quantity";
     dimensionsText = "Dimensions";
     priceText = "Price";
+    checkoutUrl = "/en/checkout";
   } else if (currentLink.includes("/hu/")) {
     fileText = "Fájl Név";
     materialText = "Anyag";
     quantityText = "Énekelni";
     dimensionsText = "Méretek";
     priceText = "Ár";
+    checkoutUrl = "/hu/penztar/";
   } else {
     fileText = "Fișier";
     materialText = "Material";
     quantityText = "Cantitate";
     dimensionsText = "Dimensiuni";
     priceText = "Preț";
+    checkoutUrl = "/finalizare-comanda/";
   }
 
   // Init data
@@ -97,18 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
       const quantity = group.group.querySelector(".order-form-quantity").value;
-      const price = group.prices[materialSelect.selectedIndex].unit_price * quantity + group.prices[materialSelect.selectedIndex].fix_price;
+      const price = (group.prices[materialSelect.selectedIndex].unit_price + group.prices[materialSelect.selectedIndex].fix_price) * quantity;
       setTimeout(() => {
-        group.status.innerHTML = `${Math.round(price)} RON`;
+        group.status.innerHTML = `${+price.toFixed(2)} RON`;
       }, 300);
       let width = Math.round(group.fileWidth);
       let height = Math.round(group.fileHeight);
       group.group.querySelector(".order-form-dimensions").innerHTML = `${width} x ${height} mm`;
-      group.productPrice = group.prices[materialSelect.selectedIndex].unit_price;
+      group.productPrice = group.prices[materialSelect.selectedIndex].unit_price + group.prices[materialSelect.selectedIndex].fix_price;
       totalPrice += price;
       group.material = materialSelect[materialSelect.selectedIndex].getAttribute("data-name");
     });
-    totalPriceElm.innerHTML = `${Math.round(totalPrice)} RON`;
+    totalPriceElm.innerHTML = `${+totalPrice.toFixed(2)} RON`;
   };
 
   // Update form group
@@ -363,9 +367,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (response.ok) {
         const data = await response.json();
-        const checkoutUrl = data["checkout_url"];
-        orderForm.reset();
-        location.replace(checkoutUrl);
+        // const checkoutUrl = data["checkout_url"];
+        // orderForm.reset();
+        // location.replace(checkoutUrl);
+        console.log(data);
       } else {
         console.log("Error:", response.status);
       }

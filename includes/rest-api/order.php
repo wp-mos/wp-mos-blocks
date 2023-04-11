@@ -8,6 +8,8 @@
         $params   = $request->get_params();
         $files    = $request->get_file_params();
 
+        $current_language = pll_current_language();
+
         if ( ! is_user_logged_in() ) {
             $response['status'] = 1;
 
@@ -78,8 +80,15 @@
         $cart_url = wc_get_cart_url();
         $cart     = WC()->cart->get_cart();
 
+        $checkout_url = '';
         // Generate checkout URL
-        $checkout_url = wc_get_checkout_url();
+        if ( $current_language == 'ro' ) {
+            $checkout_url = wc_get_checkout_url();
+        } else if ( $current_language == 'en' ) {
+            $checkout_url = home_url() . '/en/checkout/';
+        } else if ( $current_language == 'hu' ) {
+            $checkout_url = home_url() . '/hu/penztar/';
+        }
 
         $response['cart_url']     = $cart_url;
         $response['checkout_url'] = $checkout_url;

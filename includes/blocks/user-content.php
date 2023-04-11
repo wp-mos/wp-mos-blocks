@@ -72,7 +72,7 @@
                         <div class="form-group-address">
                             <h6 class="small"><?php _e( 'Address', 'mos' ); ?></h6>
                             <div class="form-block">
-                                <label for="address"><?php _e( 'Streat', 'mos' ); ?></label>
+                                <label for="address"><?php _e( 'Street', 'mos' ); ?></label>
                                 <input type="text" name="address" value="<?php echo $current_user->address; ?>">
                             </div>
 

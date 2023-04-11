@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-10T09:46:27+00:00\n"
+"POT-Creation-Date: 2023-04-10T11:32:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: mos\n"
@@ -67,6 +67,50 @@ msgstr ""
 
 #: includes/blocks/login-form.php:91
 msgid "Log in to your account"
+msgstr ""
+
+#: includes/blocks/order-form.php:12
+msgid "File"
+msgstr ""
+
+#: includes/blocks/order-form.php:14
+msgid "DXF File"
+msgstr ""
+
+#: includes/blocks/order-form.php:21
+msgid "Material"
+msgstr ""
+
+#: includes/blocks/order-form.php:26
+msgid "Choose file"
+msgstr ""
+
+#: includes/blocks/order-form.php:33
+msgid "Quantity"
+msgstr ""
+
+#: includes/blocks/order-form.php:42
+msgid "Dimensions"
+msgstr ""
+
+#: includes/blocks/order-form.php:48
+msgid "Price"
+msgstr ""
+
+#: includes/blocks/order-form.php:61
+msgid "Add a file"
+msgstr ""
+
+#: includes/blocks/order-form.php:64
+msgid "Allowed Files: dxf"
+msgstr ""
+
+#: includes/blocks/order-form.php:67
+msgid "Max file size: 50Mb"
+msgstr ""
+
+#: includes/blocks/order-form.php:74
+msgid "Order Now"
 msgstr ""
 
 #: includes/blocks/register-form.php:22
@@ -169,7 +213,7 @@ msgid "Address"
 msgstr ""
 
 #: includes/blocks/user-content.php:75
-msgid "Streat"
+msgid "Street"
 msgstr ""
 
 #: includes/blocks/user-content.php:80

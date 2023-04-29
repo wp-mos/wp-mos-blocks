@@ -50,10 +50,10 @@
                         ?>
                         <div class="dropdown">
                             <div class="dropdown-wrapper">
-                                <a href='<?php echo esc_url( site_url( '/contul-meu/' ) ) ?>'
-                                   class="dropdown-item"><?php echo 'Contul Meu' ?></a>
                                 <a href='<?php echo esc_url( site_url( '/comanda-noua' ) ) ?>'
                                    class="dropdown-item"><?php echo 'Comandă Nouă' ?></a>
+                                <a href='<?php echo esc_url( site_url( '/contul-meu/' ) ) ?>'
+                                   class="dropdown-item"><?php echo 'Contul Meu' ?></a>
                                 <a href='<?php echo wp_logout_url( home_url() ) ?>'
                                    class="dropdown-item"><?php echo 'Deconectare' ?></a>
                             </div>
@@ -63,10 +63,10 @@
                         ?>
                         <div class="dropdown">
                             <div class="dropdown-wrapper">
-                                <a href='<?php echo esc_url( site_url( '/en/my-account/' ) ) ?>'
-                                   class="dropdown-item"><?php echo 'My Account' ?></a>
                                 <a href='<?php echo esc_url( site_url( '/en/new-online-order/' ) ) ?>'
                                    class="dropdown-item"><?php echo 'New Online Order' ?></a>
+                                <a href='<?php echo esc_url( site_url( '/en/my-account/' ) ) ?>'
+                                   class="dropdown-item"><?php echo 'My Account' ?></a>
                                 <a href='<?php echo wp_logout_url( home_url() ) ?>'
                                    class="dropdown-item"><?php echo 'Logout' ?></a>
                             </div>
@@ -76,10 +76,10 @@
                         ?>
                         <div class="dropdown">
                             <div class="dropdown-wrapper">
-                                <a href='<?php echo esc_url( site_url( '/hu/a-fiokom/' ) ) ?>'
-                                   class="dropdown-item"><?php echo 'A Fiókom' ?></a>
                                 <a href='<?php echo esc_url( site_url( '/hu/uj-online-rendeles/' ) ) ?>'
                                    class="dropdown-item"><?php echo 'Új Online Rendelés' ?></a>
+                                <a href='<?php echo esc_url( site_url( '/hu/a-fiokom/' ) ) ?>'
+                                   class="dropdown-item"><?php echo 'A Fiókom' ?></a>
                                 <a href='<?php echo wp_logout_url( home_url() ) ?>'
                                    class="dropdown-item"><?php echo 'Kijelentkezés' ?></a>
                             </div>

@@ -425,9 +425,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         const data = await response.json();
         // const checkoutUrl = data["checkout_url"];
-        // orderForm.reset();
-        // location.replace(checkoutUrl);
-        console.log(data);
+        orderForm.reset();
+        location.replace(checkoutUrl);
       } else {
         console.log("Error:", response.status);
       }

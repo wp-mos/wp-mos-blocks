@@ -41,6 +41,8 @@
     add_action( 'wp_loaded', 'mos_hide_admin_bar' );
     add_action( 'admin_init', 'mos_redirect_clients_to_frontend' );
     add_action( 'template_redirect', 'mos_redirect_if_not_logged_in' );
+    add_action( 'template_redirect', 'mos_redirect_if_not_logged_in_en' );
+    add_action( 'template_redirect', 'mos_redirect_if_not_logged_in_hu' );
     add_action( 'template_redirect', 'mos_redirect_if_logged_in' );
 
     add_action( 'init', 'mos_load_translations' );
